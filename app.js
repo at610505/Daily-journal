@@ -74,7 +74,6 @@ app.get("/contact", function(req, res){
   res.render("contact", {contactContent: contactContent});
 });
 
-let port = process.env.PORT;
-app.listen(port, function() {
-  console.log("Server started on port 3000");
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
